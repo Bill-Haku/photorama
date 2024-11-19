@@ -1,0 +1,109 @@
+---
+layout: page
+title: "Singapore at Night"
+description: "The Night of Singapore"
+active: gallery
+header-img: "/gallery/singapore-night/DSC3636.jpg"
+album-title: "The Night of Singapore"
+images:
+ - image_path: /gallery/singapore-night/DSC3636.jpg
+   caption: Sky on National Day
+   copyright: © Bill Haku
+ - image_path: /gallery/singapore-night/DSC3745.jpg
+   caption: Night of the Marisands Hotel
+   copyright: © Bill Haku
+ - image_path: /gallery/singapore-night/DSC3810.jpg
+   caption: Supertrees I
+   copyright: © Bill Haku
+ - image_path: /gallery/singapore-night/DSC3818.jpg
+   caption: Supertrees II
+   copyright: © Bill Haku
+ - image_path: /gallery/singapore-night/DSC3820.jpg
+   caption: Supertrees III
+   copyright: © Bill Haku
+ - image_path: /gallery/singapore-night/DSC3821.jpg
+   caption: Supertrees IV
+   copyright: © Bill Haku
+---
+
+<html class="no-js" lang="en">
+<head>
+	<meta content="charset=utf-8">
+</head>
+
+    <body>
+ 
+	<section id="content" role="main">
+		<div class="wrapper">
+	<br><br>
+			<h2>{{page.album-title}}</h2>
+
+
+			<!-- Gallery __-->
+			<div class="gallery masonry-gallery">
+		
+{% for image in page.images %}  		
+
+				<figure class="gallery-item">
+					<header class='gallery-icon'>
+
+<a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup"  title="{{ image.caption }}" data-caption="{{ image.copyright }}">
+<img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
+						
+					</header>	
+					<figcaption class='gallery-caption'>
+						<div class="entry-summary" id="{{ image.caption }}">
+							<h3>{{image.caption}}</h3>
+							<p>{{image.copyright}}</p>
+						</div>
+					</figcaption>
+				</figure>
+				
+{% endfor %}
+
+			</div>
+
+		</div><!-- END .wrapper -->
+	</section>
+
+<!-- jQuery -->    
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- include image popups -->
+<script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+<script type="text/javascript">
+      $(document).ready(function($) {
+        $('a.popup').magnificPopup({
+         type: 'image',
+	  gallery:{
+         enabled:true,
+         navigateByImgClick: true,
+         preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+       },
+image: {
+      titleSrc: function(item) {
+              return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+            }
+        }
+          // other options
+      });
+});
+    </script>
+
+<script src="{{ site.baseurl }}/js/retina.min.js"></script>
+<!-- include Masonry -->
+<script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script> 
+<!-- include mousewheel plugins -->
+<script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+<!-- include carousel plugins -->
+<script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+<!-- include svg line drawing plugin -->
+<script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+<!-- include custom script -->
+<script src="{{ site.baseurl }}/js/scripts.js"></script>
+<!-- Modernizr -->
+ <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+    
+</body></html>

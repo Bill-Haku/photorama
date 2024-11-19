@@ -1,0 +1,142 @@
+---
+layout: page
+title: "Geroage Town & Penang Hill"
+description: "A journey in Penang, Malaysia"
+active: gallery
+header-img: "/gallery/penang/DSC3904.jpg"
+album-title: "A View of Penang"
+images:
+ - image_path: /gallery/penang/DSC3900.jpg
+   caption: A Glance from the Top of Penang Hill I
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC3904.jpg
+   caption: Penang Hill Tram
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC3923.jpg
+   caption: Gloves on the Streets
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC3932.jpg
+   caption: Chinese at Penang I
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC3936.jpg
+   caption: Chinese at Penang II
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC3941.jpg
+   caption: Neighborhoods at Geroage Town
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC3950.jpg
+   caption: Postbox
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC3953.jpg
+   caption: An Alley at Geroage Town I
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC3962.jpg
+   caption: Riding a Bicycle
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC3966.jpg
+   caption: People at Geroage Town
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC3987.jpg
+   caption: Neighborhood on the Water
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC3996.jpg
+   caption: Languages
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC3997.jpg
+   caption: Living on the Water
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC4008.jpg
+   caption: Traveling
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC4014.jpg
+   caption: An Alley at Geroage Town II
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC4016.jpg
+   caption: Comic on the Wall
+   copyright: © Bill Haku
+ - image_path: /gallery/penang/DSC4025.jpg
+   caption: Look through the Street
+   copyright: © Bill Haku
+---
+
+<html class="no-js" lang="en">
+<head>
+	<meta content="charset=utf-8">
+</head>
+
+    <body>
+ 
+	<section id="content" role="main">
+		<div class="wrapper">
+	<br><br>
+			<h2>{{page.album-title}}</h2>
+
+
+			<!-- Gallery __-->
+			<div class="gallery masonry-gallery">
+		
+{% for image in page.images %}  		
+
+				<figure class="gallery-item">
+					<header class='gallery-icon'>
+
+<a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup"  title="{{ image.caption }}" data-caption="{{ image.copyright }}">
+<img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
+						
+					</header>	
+					<figcaption class='gallery-caption'>
+						<div class="entry-summary" id="{{ image.caption }}">
+							<h3>{{image.caption}}</h3>
+							<p>{{image.copyright}}</p>
+						</div>
+					</figcaption>
+				</figure>
+				
+{% endfor %}
+
+			</div>
+
+		</div><!-- END .wrapper -->
+	</section>
+
+<!-- jQuery -->    
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- include image popups -->
+<script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+<script type="text/javascript">
+      $(document).ready(function($) {
+        $('a.popup').magnificPopup({
+         type: 'image',
+	  gallery:{
+         enabled:true,
+         navigateByImgClick: true,
+         preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+       },
+image: {
+      titleSrc: function(item) {
+              return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+            }
+        }
+          // other options
+      });
+});
+    </script>
+
+<script src="{{ site.baseurl }}/js/retina.min.js"></script>
+<!-- include Masonry -->
+<script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script> 
+<!-- include mousewheel plugins -->
+<script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+<!-- include carousel plugins -->
+<script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+<!-- include svg line drawing plugin -->
+<script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+<!-- include custom script -->
+<script src="{{ site.baseurl }}/js/scripts.js"></script>
+<!-- Modernizr -->
+ <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+    
+</body></html>

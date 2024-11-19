@@ -1,0 +1,145 @@
+---
+layout: page
+title: "大别山乡村"
+description: "走进无人问津的大别山村"
+active: gallery
+header-img: "/gallery/countryside-anhui/DSC4100.jpg"
+album-title: "秋日大别山"
+images:
+ - image_path: /gallery/countryside-anhui/DSC4032.jpg
+   caption: 连绵群山（一）
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4039.jpg
+   caption: 连绵群山（二）
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4045.jpg
+   caption: 松果
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4071.jpg
+   caption: 风车
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4085.jpg
+   caption: 乡村风光
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4096.jpg
+   caption: 红果（一）
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4098.jpg
+   caption: 红果（二）
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4100.jpg
+   caption: 小溪石间流
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4100.jpg
+   caption: 小溪石间流
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4107.jpg
+   caption: 微型瀑布
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4113.jpg
+   caption: 树上的猕猴桃
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4116.jpg
+   caption: 硕果挂枝头（一）
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4119.jpg
+   caption: 硕果挂枝头（二）
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4123.jpg
+   caption: 旧屋顶
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4126.jpg
+   caption: 硕果挂枝头（三）
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4128.jpg
+   caption: 二鸟饮水
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4136.jpg
+   caption: 路边小花
+   copyright: © Bill Haku
+ - image_path: /gallery/countryside-anhui/DSC4139.jpg
+   caption: 硕果挂枝头（四）
+   copyright: © Bill Haku
+---
+
+<html class="no-js" lang="en">
+<head>
+	<meta content="charset=utf-8">
+</head>
+
+    <body>
+ 
+	<section id="content" role="main">
+		<div class="wrapper">
+	<br><br>
+			<h2>{{page.album-title}}</h2>
+
+
+			<!-- Gallery __-->
+			<div class="gallery masonry-gallery">
+		
+{% for image in page.images %}  		
+
+				<figure class="gallery-item">
+					<header class='gallery-icon'>
+
+<a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup"  title="{{ image.caption }}" data-caption="{{ image.copyright }}">
+<img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
+						
+					</header>	
+					<figcaption class='gallery-caption'>
+						<div class="entry-summary" id="{{ image.caption }}">
+							<h3>{{image.caption}}</h3>
+							<p>{{image.copyright}}</p>
+						</div>
+					</figcaption>
+				</figure>
+				
+{% endfor %}
+
+			</div>
+
+		</div><!-- END .wrapper -->
+	</section>
+
+<!-- jQuery -->    
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- include image popups -->
+<script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+<script type="text/javascript">
+      $(document).ready(function($) {
+        $('a.popup').magnificPopup({
+         type: 'image',
+	  gallery:{
+         enabled:true,
+         navigateByImgClick: true,
+         preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+       },
+image: {
+      titleSrc: function(item) {
+              return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+            }
+        }
+          // other options
+      });
+});
+    </script>
+
+<script src="{{ site.baseurl }}/js/retina.min.js"></script>
+<!-- include Masonry -->
+<script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script> 
+<!-- include mousewheel plugins -->
+<script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+<!-- include carousel plugins -->
+<script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+<!-- include svg line drawing plugin -->
+<script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+<!-- include custom script -->
+<script src="{{ site.baseurl }}/js/scripts.js"></script>
+<!-- Modernizr -->
+ <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+    
+</body></html>
