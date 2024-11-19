@@ -1,13 +1,13 @@
 # Site settings
-title: PHOTORAMA
-email: ""
+title: Gallery of Bill Haku
+email: "i@hakubill.tech"
 description: "Photo Journal"
 url: "https://gallery.hakubill.tech"
 baseurl: ""
-facebook_username: ""
-twitter_username: ""
-instagram_username: ""
-github_username:  ""
+facebook_username: "bill.bai.338"
+twitter_username: "Haku_Bill"
+instagram_username: "Haku_Bill"
+github_username:  "Bill-Haku"
 deviantart_username: ""
 flickr_username: ""
 discus_shortname: ""
@@ -15,10 +15,10 @@ share: true
 
 # Owner/author information
 owner:
-  name:   photorama
+  name:   Bill Haku
   avatar: avatar.png
   favicon: favicon.ico
-  info: photography website template
+  info: Photo Gallery of Bill Haku
 
 # Settings for comments helper
 # Set 'provider' to the comment provider you want to use. (i.e.  Disqus, Intense Debate, livefyre, or Facebook Comments)
